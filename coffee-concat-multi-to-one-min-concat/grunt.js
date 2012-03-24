@@ -1,6 +1,6 @@
 /**
  * grunt
- * coffee example
+ * CoffeeScript example
  *
  * grunt: https://github.com/cowboy/grunt
  * CoffeeScript: http://coffeescript.org/

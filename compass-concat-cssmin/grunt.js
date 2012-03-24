@@ -35,7 +35,6 @@ module.exports = function(grunt){
 
   grunt.registerMultiTask('compass', 'compass compile', function() {
     var done = this.async();
-    var done = this.async();
     var src = this.file.src;
     var dest = this.file.dest;
     var command = 'compass compile --sass-dir ' + src + ' --css-dir ' + dest + ' --boring';

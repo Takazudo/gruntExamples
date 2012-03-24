@@ -33,7 +33,7 @@ module.exports = function(grunt){
         'coffee/1.coffee',
         'coffee/2.coffee'
       ]
-    },
+    }
   });
 
   grunt.registerMultiTask('coffee', 'compile CoffeeScripts', function() {

@@ -1,0 +1,49 @@
+/**
+ * grunt
+ * (sass + cssmin) example
+ *
+ * grunt: https://github.com/cowboy/grunt
+ * CoffeeScript: http://coffeescript.org/
+ * growlnotify: http://growl.info/extras.php#growlnotify
+ */
+module.exports = function(grunt){
+
+  var proc = require('child_process');
+  var log = grunt.log;
+
+  grunt.initConfig({
+    watch: {
+      files: [
+        'coffee/*.coffee'
+      ],
+      tasks: 'coffee notifyOK'
+    },
+    coffee: {
+      'js/': 'coffee/'
+    },
+  });
+
+  grunt.registerMultiTask('coffee', 'compile CoffeeScripts', function() {
+    var done = this.async();
+    var src = this.file.src;
+    var dest = this.file.dest;
+    var command = 'coffee --compile --output ' + dest + ' ' + src;
+    var out = proc.exec(command, function(err, sout, serr){
+      if(err || sout || serr){
+        proc.exec("growlnotify -t 'COFFEE COMPILE ERROR!' -m '" + serr + "'");
+        log.writeln('Scripts in ' + src + ' were failed to compile to ' + dest + '.');
+        done(false);
+      }else{
+        log.writeln('Scripts in ' + src + ' were compiled to ' + dest + '.');
+        done(true);
+      }
+    });
+  });
+
+  grunt.registerTask('notifyOK', 'done!', function(){
+    proc.exec("growlnotify -t 'grunt.js' -m '＼(^o^)／'");
+  });
+
+  grunt.registerTask('default', 'coffee notifyOK');
+
+};

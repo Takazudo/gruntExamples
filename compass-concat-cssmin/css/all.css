@@ -1,0 +1,29 @@
+/* line 3, ../scss/1.scss */
+.hoge {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid red;
+}
+/* line 6, ../scss/1.scss */
+.hoge .foo {
+  border: 1px solid blue;
+}
+
+/* line 3, ../scss/2.scss */
+.hogex {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid red;
+}
+/* line 6, ../scss/2.scss */
+.hogex .foox {
+  border: 1px solid blue;
+}

@@ -1,3 +1,3 @@
 # grunt examples
 
-My collection of [https://github.com/cowboy/grunt](grunt) for dev.
+My collection of [grunt](https://github.com/cowboy/grunt) for dev.

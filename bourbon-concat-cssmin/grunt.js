@@ -4,6 +4,7 @@
  *
  * grunt: https://github.com/cowboy/grunt
  * sass: http://sass-lang.com/
+ * Bourbon: http://thoughtbot.com/bourbon/
  * sqwish: https://github.com/ded/sqwish
  * growlnotify: http://growl.info/extras.php#growlnotify
  */

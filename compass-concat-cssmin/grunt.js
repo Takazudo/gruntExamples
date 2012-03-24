@@ -1,6 +1,6 @@
 /**
  * grunt
- * (compass + cssmin) example
+ * compass example
  *
  * grunt: https://github.com/cowboy/grunt
  * compass: http://compass-style.org/

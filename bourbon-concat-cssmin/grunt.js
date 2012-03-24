@@ -1,6 +1,6 @@
 /**
  * grunt
- * (sass + cssmin) example
+ * burbon example
  *
  * grunt: https://github.com/cowboy/grunt
  * sass: http://sass-lang.com/

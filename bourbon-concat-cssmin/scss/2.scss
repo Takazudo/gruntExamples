@@ -1,0 +1,9 @@
+@import 'bourbon/bourbon';
+
+.foofoo{
+	border:1px solid red;
+	.bar{
+		border:1px solid blue;
+		@include border-radius(10px);
+	}
+}

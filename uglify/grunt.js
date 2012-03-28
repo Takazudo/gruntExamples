@@ -3,7 +3,7 @@
  * uglifyjs example
  *
  * grunt: https://github.com/cowboy/grunt
- * CoffeeScript: http://coffeescript.org/
+ * UglifyJS: https://github.com/mishoo/UglifyJS
  * growlnotify: http://growl.info/extras.php#growlnotify
  */
 module.exports = function(grunt){

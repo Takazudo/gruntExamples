@@ -1,6 +1,7 @@
 # grunt examples
 
-My collection of [grunt](https://github.com/cowboy/grunt) for dev.
+My collection of [grunt](https://github.com/cowboy/grunt) for dev.  
+Tested with grunt 0.3.
 
 ## Resources
 

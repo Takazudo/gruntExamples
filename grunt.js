@@ -1,8 +1,6 @@
 /**
  * grunt
  * This grunt file is to manage gruntExample repository.
- *
- * grunt: https://github.com/cowboy/grunt
  */
 module.exports = function(grunt){
 

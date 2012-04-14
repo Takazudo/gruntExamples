@@ -1,0 +1,10 @@
+{
+  "name": "gruntExample",
+  "version": "0.0.0",
+  "dependencies": {
+    "uglify-js": "latest",
+    "coffee-script": "latest",
+    "grunt": "latest",
+    "sqwish": "latest"
+  }
+}

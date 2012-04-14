@@ -1,9 +1,6 @@
 /**
  * grunt
  * CoffeeScript example
- *
- * grunt: https://github.com/cowboy/grunt
- * CoffeeScript: http://coffeescript.org/
  */
 module.exports = function(grunt){
 

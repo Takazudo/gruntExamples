@@ -1,9 +1,6 @@
 /**
  * grunt
  * sass example
- *
- * grunt: https://github.com/cowboy/grunt
- * growlnotify: http://growl.info/extras.php#growlnotify
  */
 module.exports = function(grunt){
 

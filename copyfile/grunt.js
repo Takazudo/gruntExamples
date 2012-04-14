@@ -1,8 +1,6 @@
 /**
  * grunt
  * copy example
- *
- * grunt: https://github.com/cowboy/grunt
  */
 module.exports = function(grunt){
 

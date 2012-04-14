@@ -32,6 +32,16 @@ module.exports = function(grunt){
       dist5: {
         from: [ 'dir1/foobar.txt', 'dir1/mewmew.txt' ],
         to: 'dir5/'
+      },
+      // Exampl6: multi - directive
+      dist6: {
+        from: '<config:foo.bar.files>',
+        to: 'dir6/'
+      }
+    },
+    foo: { // for directive test
+      bar: {
+        files: [ 'dir1/foobar.txt', 'dir1/mewmew.txt' ]
       }
     },
     watch: {
@@ -54,6 +64,10 @@ module.exports = function(grunt){
       dist5: {
         files: '<config:copy.dist5.from>',
         tasks: 'copy:dist5 ok'
+      },
+      dist6: {
+        files: '<config:foo.bar.files>',
+        tasks: 'copy:dist6 ok'
       }
     }
   });

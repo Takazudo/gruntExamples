@@ -5,34 +5,52 @@
 module.exports = function(grunt){
   
   var log = grunt.log;
+  var _ = grunt.utils._;
 
   // path manipulators
 
   function isDir(path) {
     return (/\/$/).test(path);
   }
+
   function parseFileName(path) {
     return path.match(/[^\/]+$/)[0];
   }
-  function isConfigValid(fromFiles, to) {
-    if( (fromFiles.length > 1) && !isDir(to) ) {
-        return false;
+
+  function isConfigValid(from, to) {
+
+    var isWildCarded = from.indexOf('*') > -1;
+    var isFromDirective = (/^<.+>$/).test(from);
+    var isFromArray = _.isArray(from);
+    var isToDir = isDir(to);
+    var isFromPlural = false;
+
+    if(isFromArray) {
+      isFromPlural = true;
+    } else if(isFromDirective) {
+      if(grunt.file.expand(from).length > 1) {
+        isFromPlural = true;
+      }
     }
-    return true;
-  }
 
-  // surface
-
-  grunt.registerMultiTask( "copy", "just copy", function() {
-
-    var from = this.data.from;
-    var fromFiles = grunt.file.expand(from);
-    var to = this.data.to;
-
-    // if "from" was plural, "to" needs to be a directory
-    if(!isConfigValid(fromFiles, to)) {
+    // if "from" was plural, "to" must refer directory
+    if( (isWildCarded || isFromArray) && isFromPlural && !isToDir) {
       return false;
     }
+    return true;
+
+  }
+
+  // main copy process
+
+  grunt.registerHelper('copy', function(from, to){
+
+    if(!isConfigValid(from, to)) {
+      grunt.helper('growl', 'COPYFILE GOT ERROR', 'config invalid. from: ' + from + ' to: ' + to);
+      return false;
+    }
+
+    var fromFiles = grunt.file.expand(from);
 
     // copy each
     fromFiles.forEach(function(file) {
@@ -48,6 +66,12 @@ module.exports = function(grunt){
 
     return true;
 
+  });
+
+  // surface
+
+  grunt.registerMultiTask( 'copy', 'just copy', function() {
+    return grunt.helper('copy', this.data.from, this.data.to);
   });
 
 };

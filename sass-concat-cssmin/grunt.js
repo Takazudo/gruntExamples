@@ -7,9 +7,6 @@
  */
 module.exports = function(grunt){
 
-  var proc = require('child_process');
-  var log = grunt.log;
-
   grunt.initConfig({
     sass: {
       dist1: { src: 'scss/1.scss', dest: 'css/1.css' },

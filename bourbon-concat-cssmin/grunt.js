@@ -1,72 +1,42 @@
 /**
  * grunt
- * burbon example
- *
- * grunt: https://github.com/cowboy/grunt
- * sass: http://sass-lang.com/
- * Bourbon: http://thoughtbot.com/bourbon/
- * sqwish: https://github.com/ded/sqwish
- * growlnotify: http://growl.info/extras.php#growlnotify
+ * bourbon example
  */
 module.exports = function(grunt){
 
-  var proc = require('child_process');
-  var log = grunt.log;
-
   grunt.initConfig({
-    watch: {
-      files: [
-        'scss/*.scss'
-      ],
-      tasks: 'sass concat cssmin notifyOK'
-    },
-    sass: {
-      'css/1.css': 'scss/1.scss',
-      'css/2.css': 'scss/2.scss'
+    bourbon: {
+      dist1: { src: 'scss/1.scss', dest: 'css/1.css' },
+      dist2: { src: 'scss/2.scss', dest: 'css/2.css' }
     },
     concat:  {
-      'css/all.css' : [
-        'css/1.css',
-        'css/2.css'
-      ]
+      all: {
+        src: [
+          '<config:bourbon.dist1.dest>',
+          '<config:bourbon.dist2.dest>'
+        ],
+        dest: 'css/all.css'
+      }
     },
     cssmin: {
-      'css/all.min.css': 'css/all.css'
+      all: {
+        src: '<config:concat.all.dest>',
+        dest: 'css/all.min.css'
+      }
+    },
+    watch: {
+      dist1: {
+        files: '<config:bourbon.dist1.src>',
+        tasks: 'bourbon:dist1 concat cssmin ok'
+      },
+      dist2: {
+        files: '<config:bourbon.dist2.src>',
+        tasks: 'bourbon:dist2 concat cssmin ok'
+      }
     }
   });
 
-  grunt.registerMultiTask('sass', 'sass compile', function() {
-    var done = this.async();
-    var src = this.file.src;
-    var dest = this.file.dest;
-    var command = 'sass -r scss/bourbon/lib/bourbon.rb ' + src + ' ' + dest;
-    proc.exec(command, function(err, sout, serr){
-      if(serr.indexOf('error')>-1){
-        proc.exec("growlnotify -t 'SASS COMPILE ERROR!!!' -m '" + serr + "'");
-        log.writeln('File ' + dest + ' failed.');
-        done(false);
-      }else{
-        log.writeln('File ' + dest + ' created.');
-        done(true);
-      }
-    });
-  });
-
-  grunt.registerMultiTask('cssmin', 'minify css', function() {
-    var done = this.async();
-    var src = this.file.src;
-    var dest = this.file.dest;
-    var command = 'sqwish ' + src + ' -o ' + dest;
-    var out = proc.exec(command, function(err, sout, serr){
-        log.writeln('File ' + dest + ' created.');
-        done(true);
-    });
-  });
-
-  grunt.registerTask('notifyOK', 'done!', function(){
-    proc.exec("growlnotify -t 'grunt.js' -m '＼(^o^)／'");
-  });
-
-  grunt.registerTask('default', 'sass concat cssmin notifyOK');
+  grunt.loadTasks('tasks');
+  grunt.registerTask('default', 'bourbon concat cssmin ok');
 
 };

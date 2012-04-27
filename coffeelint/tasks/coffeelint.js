@@ -8,7 +8,7 @@ module.exports = function(grunt){
 
   function handleResult(files, err, stdout, code, done) {
     var trimed = grunt.helper('trimcolors', stdout);
-    var hasError = trimed.indexOf('0 errors') === -1;
+    var hasError = trimed.indexOf(' 0 errors') === -1;
     if(hasError){
       grunt.helper('growl', 'COFFEELINT FOUND ERROR', trimed);
       log.write(stdout);

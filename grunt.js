@@ -50,6 +50,13 @@ module.exports = function(grunt){
           'tasks_js/misc.js'
         ],
         to: 'uglify/tasks/'
+      },
+      coffeelint: {
+        from: [
+          'tasks_js/coffeelint.js',
+          'tasks_js/misc.js'
+        ],
+        to: 'coffeelint/tasks/'
       }
     },
     watch: {

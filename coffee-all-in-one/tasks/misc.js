@@ -14,10 +14,16 @@ module.exports = function(grunt){
       if(code === 0) {
         done(null, stdout, code);
       } else {
-        done(code, stderr, code);
+        done(code, stdout || stderr, code);
       }
     });
   });
+
+  // trim ANSI color codes
+  grunt.registerHelper('trimcolors', function(str) {
+    return str.replace(/\u001b\[\d+m/ig,'');
+  });
+
 
   // growl: Ex. grunt.helper('growl', 'foo', 'bar');
   // http://growl.info/extras.php#growlnotify

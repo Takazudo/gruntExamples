@@ -11,6 +11,12 @@ Install this with `-g`
 
 * [http://coffeescript.org/](http://coffeescript.org/)
 
+### CoffeeLink
+
+Install this with `-g`
+
+* [http://www.coffeelint.org/](http://www.coffeelint.org/)
+
 ### Sass
 
 * [http://sass-lang.com/](http://sass-lang.com/)

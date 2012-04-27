@@ -11,7 +11,7 @@ Install this with `-g`
 
 * [http://coffeescript.org/](http://coffeescript.org/)
 
-### CoffeeLink
+### CoffeeLint
 
 Install this with `-g`
 

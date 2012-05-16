@@ -1,0 +1,1 @@
+Qunit test with coffeescript

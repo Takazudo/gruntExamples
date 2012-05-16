@@ -65,6 +65,13 @@ module.exports = function(grunt){
           'tasks_js/misc.js'
         ],
         to: 'coffeelint-compile/tasks/'
+      },
+      qunit_coffee: {
+        from: [
+          'tasks_js/coffee.js',
+          'tasks_js/misc.js'
+        ],
+        to: 'qunit-coffee/tasks/'
       }
     },
     watch: {

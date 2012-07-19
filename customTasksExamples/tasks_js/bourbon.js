@@ -5,7 +5,7 @@
  */
 module.exports = function(grunt){
   
-  var path_bourbon = 'scss/bourbon/lib/bourbon.rb'; // configure this
+  var path_bourbon = './scss/bourbon/lib/bourbon.rb'; // configure this
   
   var log = grunt.log;
 

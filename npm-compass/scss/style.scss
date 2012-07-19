@@ -1,0 +1,10 @@
+@import "compass/css3";
+
+.hoge {
+	.foo {
+		.bar {
+			border:1px solid red;
+			@include border-radius(10px);
+		}
+	}
+}

@@ -1,8 +1,6 @@
 {
   "name": "MyApp",
-  "description": "description here",
-  "version": "0.8.2",
-  "author": "My Name <example@example.com>",
+  "version": "0.0.1",
   "dependencies": {
     "grunt-growl": "latest",
     "grunt-coffee": "latest"

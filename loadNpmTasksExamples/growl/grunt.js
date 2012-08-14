@@ -8,9 +8,9 @@ module.exports = function(grunt){
 
   grunt.initConfig({
     growl: {
-      test1: {
-        message: 'OMG!!!',
-        title: 'WOOOOT!!'
+      ok: {
+        title: 'grunt.js',
+        message: 'OK!'
       }
     }
   });

@@ -1,0 +1,7 @@
+{
+  "name": "MyApp",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-contrib": "latest"
+  }
+}

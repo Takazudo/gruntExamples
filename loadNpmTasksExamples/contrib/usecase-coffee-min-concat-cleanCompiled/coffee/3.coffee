@@ -1,0 +1,2 @@
+do ->
+  alert 'aghhhhh'

@@ -72,6 +72,13 @@ module.exports = function(grunt){
           'tasks_js/misc.js'
         ],
         to: 'qunit-coffee/tasks/'
+      },
+      utf8tosjis: {
+        from: [
+          'tasks_js/utf8tosjis.js',
+          'tasks_js/misc.js'
+        ],
+        to: 'utf8tosjis/tasks/'
       }
     },
     watch: {

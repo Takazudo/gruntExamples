@@ -6,7 +6,10 @@ module.exports = function(grunt){
 
   // child_process.exec bridge
   grunt.registerHelper('exec', function(opts, done) {
-    var command = opts.cmd + ' ' + opts.args.join(' ');
+    var command = opts.cmd;
+    if(opts.args) {
+      command = command + ' ' + opts.args.join(' ');
+    }
     exec(command, opts.opts, function(code, stdout, stderr) {
       if(!done){
         return;

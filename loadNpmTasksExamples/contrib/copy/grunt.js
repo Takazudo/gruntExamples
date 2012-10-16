@@ -10,17 +10,17 @@ module.exports = function(grunt){
     copy: {
       fileTest: {
         files: {
-          './to': './from/1.txt'
+          './to/': './from/1.txt'
         }
       },
       fileTest2: {
         files: {
-          './to': [ './from/2.txt', './from/3.txt' ]
+          './to/': [ './from/2.txt', './from/3.txt' ]
         }
       },
       dirTest1: {
         files: {
-          './to/4': [ './from/4/**' ]
+          './to/4/': [ './from/4/**' ]
         }
       }
     }

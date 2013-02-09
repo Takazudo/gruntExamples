@@ -29,14 +29,6 @@ module.exports = function(grunt){
         ],
         to: 'compass-concat-cssmin/tasks/'
       },
-      bourbon_concat_cssmin: {
-        from: [
-          'tasks_js/bourbon.js',
-          'tasks_js/cssmin.js',
-          'tasks_js/misc.js'
-        ],
-        to: 'bourbon-concat-cssmin/tasks/'
-      },
       coffee_all_in_one: {
         from: [
           'tasks_js/coffee.js',

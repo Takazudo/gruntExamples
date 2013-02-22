@@ -1,0 +1,2 @@
+do ->
+  console.log 'foo'

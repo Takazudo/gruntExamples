@@ -1,0 +1,4 @@
+.hoge {
+  border: 1px solid red; }
+  .hoge .foo {
+    border: 1px solid blue; }

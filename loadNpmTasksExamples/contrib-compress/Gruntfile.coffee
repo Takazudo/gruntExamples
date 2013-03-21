@@ -7,10 +7,9 @@ module.exports = (grunt) ->
     compress:
       main:
         options:
+          mode: 'zip'
           archive: 'foo.zip'
-        expand: true
-        cwd: 'files/'
-        src: '**'
+        src: 'files/**'
         dest: 'zipped/'
 
   grunt.registerTask 'default', [ 'compress' ]

@@ -3,6 +3,6 @@
   "version": "0.1.0",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-compress": "~0.4.3"
+    "grunt-contrib-compress": "~0.4.5"
   }
 }
